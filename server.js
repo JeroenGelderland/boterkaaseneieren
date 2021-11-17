@@ -16,7 +16,7 @@ io.on('connection', (socket) => {
 
     socket.on('click', (socket) => {
         console.log('Client clicked');
-        () => io.emit('time', new Date().toTimeString())
+        socket.emit('time', new Date().toTimeString())
     });
 });
 
