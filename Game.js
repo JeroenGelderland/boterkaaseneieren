@@ -42,7 +42,7 @@ export default class Game{
     }
 
     join(id){
-        let team = this.team_options.splice(Math.floor(Math.random() * 3), 1)[0]
+        let team = this.team_options.splice(Math.floor(Math.random() * this.team_options.length), 1)[0]
         if(team){
             this.players[id] = {}
             this.players[id]['team'] = team
