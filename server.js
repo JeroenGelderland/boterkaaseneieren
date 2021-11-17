@@ -16,7 +16,7 @@ io.on('connection', (socket) => {
 
     socket.on('click', (socket) => {
         console.log('Client clicked');
+        () => io.emit('time', new Date().toTimeString())
     });
 });
 
-setInterval(() => io.emit('time', new Date().toTimeString()), 1000);
