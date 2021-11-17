@@ -11,12 +11,14 @@ const server = express()
 const io = socketIO(server);
 
 io.on('connection', (socket) => {
+
+    const socket_id = socket.id
+
     console.log('Client connected');
     socket.on('disconnect', () => console.log('Client disconnected'));
 
-    socket.on('click', (socket) => {
-        console.log('Client clicked');
-        socket.emit('time', new Date().toTimeString())
+    socket.on('click', () => {
+        io.to(socket_id).emit('time', new Date().toTimeString())
     });
 });
 
