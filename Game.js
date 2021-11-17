@@ -17,6 +17,14 @@ export default class Game{
         this.current = Math.floor(Math.random() * Object.keys(this.players).length)
     }
 
+    reset(){
+        this.field = []
+
+        for(let i = 0; i < SIZE; i++){
+            this.field.push([])
+        }
+    }
+
     place(pos, id){
         console.log(id)
         if(Object.keys(this.players)[this.current] === id){

@@ -11,6 +11,10 @@ const colors = {
     "eieren": "gold"
 }
 
+document.querySelector('button').addEventListener('click', () => {
+    socket.emit('reset')
+})
+
 socket.on('team', (team) => {
 
     const SIZE = 30
@@ -34,6 +38,12 @@ socket.on('team', (team) => {
 
     socket.on('refresh', (data) => {
         console.log(data)
+
+        document.querySelectorAll('.square').forEach(el => {
+            el.innerHTML = ''
+            el.style.background = 'inherit'
+        })
+
         data.field.forEach((list, x) => {
             list.forEach((field, y) => {
 

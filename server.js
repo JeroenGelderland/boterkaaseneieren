@@ -41,6 +41,11 @@ io.on('connection', (socket) => {
         }
     })
 
+    socket.on('reset', () => {
+        game.reset()
+        io.emit('refresh', game)
+    })
+
     io.emit('refresh', game)
 });
 
