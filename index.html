@@ -5,33 +5,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Boter Kaas en Eieren</title>
     <script src="/socket.io/socket.io.js"></script>
-    <script>
+    <script src="client.js" defer></script>
 
-        var socket = io();
-        
-
-        window.onload = () => {
-
-            var el;
-
-            socket.on('time', function (timeString) {
-                el = document.getElementById('server-time')
-                el.innerHTML = 'Server time: ' + timeString;
-            });
-        }
-
-        window.onclick = () => {
-            console.log('click')
-            socket.emit('click', {})
-        }
-        
-    </script>
+    <link rel="stylesheet" href="main.css">
 </head>
 
 <body>
-    <p id="server-time"></p>
+
+    <div class="field">
+        
+    </div>
 </body>
 
 </html>

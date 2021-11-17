@@ -1,0 +1,36 @@
+*{
+    position: relative;
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    background: rgb(75, 75, 75);
+}
+
+.field{
+    display: grid;
+    width: 45vw;
+    height: 45vw;
+    grid-template-columns: repeat(30, 1fr);
+    grid-template-rows: repeat(30, 1fr);
+    user-select: none;
+}
+
+.square{
+    border: dotted .1px gray;
+    font-size: 1vw;
+    overflow: hidden;
+    display: grid;
+    place-content: center;
+}
+
+.square:hover{
+    border-color: white;
+    background: rgba(255, 255, 255, 0.438);
+}
+
+
